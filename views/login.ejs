@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>MCare | Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    /* Select the text that is being highlighted */
+    ::selection {
+      background: #d6d6d6;
+      /* Set the background color for the selected text */
+      color: #313131;
+      /* Set the text color for the selected text */
+    }
+
+    /* Target the scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      /* Adjust width */
+    }
+
+    /* Customize the scrollbar track */
+    ::-webkit-scrollbar-track {
+      background-color: #f7f7f7;
+      /* Set track background color to a shade of white */
+    }
+
+    /* Customize the scrollbar thumb */
+    ::-webkit-scrollbar-thumb {
+      background-color: #e6e6e6;
+      /* Set thumb background color to a shade of white */
+      border-radius: 10px;
+      /* Apply border radius */
+    }
+
+    /* Customize the scrollbar thumb on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #cccccc;
+      /* Set thumb background color to a darker shade of white on hover */
+    }
+
+    /* Customize the scrollbar thumb when active (being clicked) */
+    ::-webkit-scrollbar-thumb:active {
+      background-color: #b3b3b3;
+      /* Set thumb background color to another shade of white when active */
+    }
+
+    /* Add a box shadow effect to the scrollbar thumb */
+    ::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      /* Apply box shadow effect */
+    }
+
+    /* Add a gradient effect to the scrollbar thumb */
+    ::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(#e6e6e6, #b3b3b3);
+      /* Apply gradient effect with shades of white */
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <div class="bg-gray-100 py-8 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
+      <div
+        class="justify-center mx-auto text-left align-bottom transition-all transform bg-white rounded-lg sm:align-middle sm:max-w-2xl sm:w-full">
+        <div class="grid flex-wrap items-center justify-center grid-cols-1 mx-auto shadow-xl lg:grid-cols-2 rounded-xl">
+          <div class="w-full px-5 py-3">
+            <div>
+              <div class="mt-3 text-left sm:mt-5">
+                <div class="inline-flex items-center w-full">
+                  <h3 class="text-lg font-bold text-neutral-600 l eading-6 lg:text-5xl">Login In</h3>
+                </div>
+                <div class="mt-4 text-base text-gray-500">
+                  <p>Login up and get your state of emotions.</p>
+                </div>
+              </div>
+            </div>
+
+            <form action="/login" method="post">
+              <div class="mt-6 space-y-2">
+                <div>
+                  <label for="email" class="sr-only">Email</label>
+                  <input type="text" name="email" id="email"
+                    class="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                    placeholder="Enter your email" fdprocessedid="zh7tts">
+                </div>
+                <div>
+                  <label for="password" class="sr-only">Password</label>
+                  <input type="password" name="password" id="password"
+                    class="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transform border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                    placeholder="Enter your password" fdprocessedid="5ee18">
+                </div>
+                <div class="flex flex-col mt-4 lg:space-y-2">
+                  <a href="/home">
+                    <button type="submit"
+                      class="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                      fdprocessedid="hkotlm">Login</button></a>
+                  <a href="/register" class="text-sm font-bold text-gray-400 hover:text-violet-500 m-1"> Don't have
+                    account? Just Sign Up</a>
+                </div>
+                <div class="relative my-4">
+                  <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                  </div>
+                  <div class="relative flex justify-center text-sm">
+                    <span class="px-2 text-neutral-600 bg-white"> Or continue with </span>
+                  </div>
+                </div>
+                <div>
+                  <!-- TODO -->
+                  <a href="/auth/google">
+                    <button type="button"
+                      class="w-full items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                      fdprocessedid="nap8k">
+                      <div class="flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                          class="w-6 h-6" viewBox="0 0 48 48">
+                          <defs>
+                            <path id="a"
+                              d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z">
+                            </path>
+                          </defs>
+                          <clipPath id="b">
+                            <use xlink:href="#a" overflow="visible"></use>
+                          </clipPath>
+                          <path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z"></path>
+                          <path clip-path="url(#b)" fill="#EA4335" d="M0 11l17 13 7-6.1L48 14V0H0z"></path>
+                          <path clip-path="url(#b)" fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z"></path>
+                          <path clip-path="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z"></path>
+                        </svg>
+                        <span class="ml-5"> Log in with Google</span>
+                      </div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="order-first hidden w-full lg:block">
+            <img class="object-cover px-4 w-full h-full bg-fill rounded-l-lg"
+              src="/images/emotions.gif?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+              alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div>
+    <div>
+
+      <!-- footer -->
+      <section>
+        <footer>
+          <div class="bg-gray-200 [95rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-5 text-center">
+              <div>
+                <a class="flex-none text-2xl font-semibold text-black dark:text-gray-400" href="cover.html"
+                  aria-label="Brand">Mcare</a>
+              </div>
+              <!-- End Col -->
+
+              <ul class="text-center">
+                <li
+                  class="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-900">
+                  <a class="flex-none text-2xl font-semibold text-black dark:text-gray-400" href="#"
+                    aria-label="About">About</a>
+                </li>
+                <li
+                  class="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
+                  <a class="flex-none text-2xl font-semibold text-black dark:text-gray-400" href="#"
+                    aria-label="Services">Services</a>
+                </li>
+                <li
+                  class="inline-block relative pr-8 last:pr-0 last-of-type:before:hidden before:absolute before:top-1/2 before:right-3 before:-translate-y-1/2 before:content-['/'] before:text-gray-300 dark:before:text-gray-600">
+                  <a class="flex-none text-2xl font-semibold text-black dark:text-gray-400" href="#"
+                    aria-label="Blogs">Blogs</a>
+                </li>
+              </ul>
+              <!-- End Col -->
+
+              <!-- Social Brands -->
+              <div class="md:text-right space-x-2">
+                <a class="inline-flex justify-center items-center w-8 h-8 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800 dark:focus:ring-offset-slate-900"
+                  href="#">
+                  <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                  </svg>
+                </a>
+                <a class="inline-flex justify-center items-center w-8 h-8 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800 dark:focus:ring-offset-slate-900"
+                  href="#">
+                  <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                  </svg>
+                </a>
+                <a class="inline-flex justify-center items-center w-8 h-8 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800 dark:focus:ring-offset-slate-900"
+                  href="#">
+                  <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                  </svg>
+                </a>
+                <a class="inline-flex justify-center items-center w-8 h-8 text-center text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition dark:text-gray-500 dark:hover:text-gray-200 dark:hover:bg-gray-800 dark:focus:ring-offset-slate-900"
+                  href="#">
+                  <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M3.362 10.11c0 .926-.756 1.681-1.681 1.681S0 11.036 0 10.111C0 9.186.756 8.43 1.68 8.43h1.682v1.68zm.846 0c0-.924.756-1.68 1.681-1.68s1.681.756 1.681 1.68v4.21c0 .924-.756 1.68-1.68 1.68a1.685 1.685 0 0 1-1.682-1.68v-4.21zM5.89 3.362c-.926 0-1.682-.756-1.682-1.681S4.964 0 5.89 0s1.68.756 1.68 1.68v1.682H5.89zm0 .846c.924 0 1.68.756 1.68 1.681S6.814 7.57 5.89 7.57H1.68C.757 7.57 0 6.814 0 5.89c0-.926.756-1.682 1.68-1.682h4.21zm6.749 1.682c0-.926.755-1.682 1.68-1.682.925 0 1.681.756 1.681 1.681s-.756 1.681-1.68 1.681h-1.681V5.89zm-.848 0c0 .924-.755 1.68-1.68 1.68A1.685 1.685 0 0 1 8.43 5.89V1.68C8.43.757 9.186 0 10.11 0c.926 0 1.681.756 1.681 1.68v4.21zm-1.681 6.748c.926 0 1.682.756 1.682 1.681S11.036 16 10.11 16s-1.681-.756-1.681-1.68v-1.682h1.68zm0-.847c-.924 0-1.68-.755-1.68-1.68 0-.925.756-1.681 1.68-1.681h4.21c.924 0 1.68.756 1.68 1.68 0 .926-.756 1.681-1.68 1.681h-4.21z" />
+                  </svg>
+                </a>
+              </div>
+              <!-- End Social Brands -->
+            </div>
+            <!-- End Grid -->
+          </div>
+    </div>
+  </div>
+  </footer>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
