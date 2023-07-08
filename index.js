@@ -203,9 +203,6 @@ app.get("/online-councelling", requireLogin, (req, res) => {
 app.get("/support", requireLogin, (req, res) => {
   res.render("navPages/support");
 });
-app.get("/support/voice-assistant", requireLogin, (req, res) => {
-  res.render("navPages/voiceAssistant");
-});
 
 app.get("/accounts", requireLogin, (req, res) => {
   res.render("navPages/accounts");
@@ -232,6 +229,12 @@ app.get("/schedule-your-session", requireLogin, (req, res) => {
 
 app.get("/payments", requireLogin, (req, res) => {
   res.render("navPages/payments");
+});
+app.get("/payments/transaction", requireLogin, (req, res) => {
+  res.render("navPages/transaction");
+});
+app.get("/payments/transaction/success", requireLogin, (req, res) => {
+  res.render("navPages/success");
 });
 
 app.post("/logout", (req, res) => {
