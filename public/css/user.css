@@ -1,0 +1,30 @@
+
+.prev{
+    background-color: black;
+    text-align: center;
+    color: lawngreen;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px;
+    border-radius: 5000px;
+    font-size: xx-large;
+    margin-top: -20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    right: 1000px;
+}
+
+.nxt{
+    position: absolute;
+    right: 0%;
+    background-color: black;
+    text-align: center;
+    color: lawngreen;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px;
+    border-radius: 5000px;
+    font-size: xx-large;
+    margin-top: -20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}

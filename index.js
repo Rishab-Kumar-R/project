@@ -17,6 +17,7 @@ const authenticateUser = require("./middleware/userMiddleware");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const PORT = process.env.PORT;
 const app = express();
@@ -64,6 +65,15 @@ const requireLogin = (req, res, next) => {
     return res.redirect("/login");
   }
   next();
+};
+
+const requireDoctor = (req, res, next) => {
+  const user = User.findById(req.session.userId);
+  if (user.role !== "As Specialists") {
+    return res.redirect("/login");
+  } else {
+    next();
+  }
 };
 
 // static page
@@ -115,7 +125,7 @@ app.post(
   })
 );
 
-// google Aurhentication using Passport.js
+// google Authentication using Passport.js
 app.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["email", "profile"] })
@@ -132,6 +142,41 @@ app.get(
 // static page
 app.get("/home", requireLogin, (req, res) => {
   res.render("home");
+});
+
+app.get("/home/ADHD", requireLogin, (req, res) => {
+  res.render("user/ADHD");
+});
+app.get("/home/depression", requireLogin, (req, res) => {
+  res.render("user/depression");
+});
+app.get("/home/relationship", requireLogin, (req, res) => {
+  res.render("user/relationship");
+});
+app.get("/home/anxiety-and-stress", requireLogin, (req, res) => {
+  res.render("user/anxiety");
+});
+app.get("/home/grief-and-loss", requireLogin, (req, res) => {
+  res.render("user/grief");
+});
+app.get("/home/trauma", requireLogin, (req, res) => {
+  res.render("user/trauma");
+});
+app.get("/home/LGBTQIA", requireLogin, (req, res) => {
+  res.render("user/LGBTQIA");
+});
+app.get("/home/psychosis", requireLogin, (req, res) => {
+  res.render("user/psychosis");
+});
+
+app.get("/doctor/dashboard", requireLogin, requireDoctor, (req, res) => {
+  res.render("doctor/dashboard");
+});
+app.get("/doctor/profile", requireLogin, requireDoctor, (req, res) => {
+  res.render("doctor/profile");
+});
+app.get("/doctor/session", requireLogin, requireDoctor, (req, res) => {
+  res.render("doctor/session");
 });
 
 app.get("/counselors", requireLogin, (req, res) => {
@@ -158,9 +203,27 @@ app.get("/online-councelling", requireLogin, (req, res) => {
 app.get("/support", requireLogin, (req, res) => {
   res.render("navPages/support");
 });
+app.get("/support/voice-assistant", requireLogin, (req, res) => {
+  res.render("navPages/voiceAssistant");
+});
 
 app.get("/accounts", requireLogin, (req, res) => {
   res.render("navPages/accounts");
+});
+app.get("/user/profile", requireLogin, (req, res) => {
+  res.render("user/profile");
+});
+app.get("/user/chats", requireLogin, (req, res) => {
+  res.render("user/chats");
+});
+app.get("/user/chat/comments", requireLogin, (req, res) => {
+  res.render("user/comments");
+});
+app.get("/user/medication", requireLogin, (req, res) => {
+  res.render("user/medication");
+});
+app.get("/user/session", requireLogin, (req, res) => {
+  res.render("user/session");
 });
 
 app.get("/schedule-your-session", requireLogin, (req, res) => {
